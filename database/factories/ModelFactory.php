@@ -28,3 +28,11 @@ $factory->define(App\Post::class, function(Faker\Generator $faker){
       'body' => $faker->realText($maxNbChars = 1000),
     ];
 });
+
+
+$factory->define(App\Project::class, function(Faker\Generator $faker){
+    return [
+      'title' => $faker->realText($maxNbChars = 50),
+      'body' => $faker->realText($maxNbChars = 1000),
+    ];
+});
