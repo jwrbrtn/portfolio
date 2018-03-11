@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
 
-<h1>Show specific project</h1>
+<div class="container">
+<h3>{{$project->title}}</h3>
+<p>{{$project->body}}</p>
+</div>
 
 @endsection

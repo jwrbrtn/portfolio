@@ -25,7 +25,7 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        //
+        return view('projects.create');
     }
 
     /**
@@ -36,7 +36,11 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $project = new Project;
+        $project->title = $request->title;
+        $project->body = $request->body;
+        $project->save();
+        return redirect('home');
     }
 
     /**
@@ -47,7 +51,8 @@ class ProjectsController extends Controller
      */
     public function show($id)
     {
-        //
+        $project = Project::find($id);
+        return view('projects.show', compact('project'));
     }
 
     /**
@@ -58,7 +63,8 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $project = Project::find($id);
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -70,7 +76,11 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $project = Project::find($id);
+        $project->title = $request->title;
+        $project->body = $request->body;
+        $project->save();
+        return redirect('home');
     }
 
     /**
@@ -81,6 +91,8 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $project = Project::find($id);
+        $project->delete();
+        return view('home');
     }
 }

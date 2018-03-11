@@ -31,12 +31,12 @@ Route::delete('/blog/{id}/delete', 'PostsController@destroy')->middleware('auth'
 
 /* Projects Routes */
 Route::get('/projects', 'ProjectsController@index');
-Route::get('/project/{id}', 'ProjectsController@show');
+Route::get('/projects/{id}', 'ProjectsController@show');
 Route::get('/project/new', 'ProjectsController@create')->middleware('auth');
-Route::post('/projects/create', 'ProjectsController@store')->middleware('auth');
+Route::post('/project/new', 'ProjectsController@store')->middleware('auth');
 Route::get('/projects/{id}/edit', 'ProjectsController@edit')->middleware('auth');
-Route::post('/projects/{id}/edit', 'ProjectsController@update')->middleware('auth');
-Route::post('/projects/{id}/destroy', 'ProjectsController@destroy')->middleware('auth');
+Route::patch('/projects/{id}/edit', 'ProjectsController@update')->middleware('auth');
+Route::delete('/projects/{id}/delete', 'ProjectsController@destroy')->middleware('auth');
 
 
 /* Setup Routes */
