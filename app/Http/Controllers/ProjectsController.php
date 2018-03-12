@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use Illuminate\Support\Facades\Input;
+use Mews\Purifier\Facades\Purifier;
+
 
 class ProjectsController extends Controller
 {
@@ -38,6 +41,7 @@ class ProjectsController extends Controller
     {
         $project = new Project;
         $project->title = $request->title;
+        Purifier::clean(Input::get('inputname'));
         $project->body = $request->editordata;
         $project->save();
         return redirect('home');
