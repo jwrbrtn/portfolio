@@ -1,0 +1,36 @@
+.dark {
+  background-color: #233645;
+
+}
+
+.dark a {
+  color: white;
+}
+
+
+.menu {
+  background-color: #2f4050;
+  height: 900px;;
+  padding-top: 10px;
+  color: white;
+}
+
+.menu a {
+  color: #809fae;
+}
+
+.menu a:hover {
+  background-color: #293846;
+  color: white;
+  border-radius: 0px;
+}
+
+.menu-label {
+  margin-left: 5px;
+  color:white;
+}
+
+.form-section {
+  padding-top: 50px;
+  padding-left: 25px;
+}
