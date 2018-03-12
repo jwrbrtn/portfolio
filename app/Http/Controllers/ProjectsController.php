@@ -38,7 +38,7 @@ class ProjectsController extends Controller
     {
         $project = new Project;
         $project->title = $request->title;
-        $project->body = $request->body;
+        $project->body = $request->editordata;
         $project->save();
         return redirect('home');
     }
