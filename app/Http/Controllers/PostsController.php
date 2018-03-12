@@ -40,7 +40,7 @@ class PostsController extends Controller
     {
       $post = new Post;
       $post->title = $request->title;
-      $post->body = $request->body;
+      $post->body = $request->editordata;
       $post->save();
       return redirect('home');
     }

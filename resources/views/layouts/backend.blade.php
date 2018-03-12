@@ -7,7 +7,9 @@
     <title>Hello Bulma!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <link href="https://cdn.quilljs.com/1.3.5/quill.snow.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
@@ -74,14 +76,12 @@
       </div>
     </div>
   </footer>
-  <!-- Include the Quill library -->
-<script src="https://cdn.quilljs.com/1.3.5/quill.js"></script>
-
-<!-- Initialize Quill editor -->
-<script>
-  var quill = new Quill('#editor', {
-    theme: 'snow'
-  });
-</script>
+  <script>
+       $('#summernote').summernote({
+         placeholder: 'Hello stand alone ui',
+         tabsize: 2,
+         height: 100
+       });
+     </script>
   </body>
 </html>
