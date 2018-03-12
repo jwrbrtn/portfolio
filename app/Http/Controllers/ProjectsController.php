@@ -7,6 +7,8 @@ use App\Project;
 use Illuminate\Support\Facades\Input;
 use Mews\Purifier\Facades\Purifier;
 
+use Validator;
+
 
 class ProjectsController extends Controller
 {
@@ -37,12 +39,22 @@ class ProjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Project $project)
     {
-        $project = new Project;
+          $validator = Validator::make($request->all(), [
+             'title' => 'required|unique:posts|max:255',
+             'editordata' => 'required',
+         ]);
+
+         if ($validator->fails()) {
+             return redirect('project/new')
+                         ->withErrors($validator)
+                         ->withInput();
+         }
+
         $project->title = $request->title;
-        Purifier::clean(Input::get('inputname'));
-        $project->body = $request->editordata;
+        $clean = Purifier::clean(Input::get('editordata'));
+        $project->body = $clean;
         $project->save();
         return redirect('home');
     }

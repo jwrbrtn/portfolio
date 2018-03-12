@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Input;
+use Mews\Purifier\Facades\Purifier;
+use Validator;
 use DB;
 
 class PostsController extends Controller
@@ -36,13 +39,25 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Post $post)
     {
-      $post = new Post;
+
+      $validator = Validator::make($request->all(), [
+         'title' => 'required|unique:posts|max:255',
+         'editordata' => 'required',
+     ]);
+
+     if ($validator->fails()) {
+         return redirect('post/new')
+                     ->withErrors($validator)
+                     ->withInput();
+     }
+      // If everything validates then do this
       $post->title = $request->title;
-      $post->body = $request->editordata;
+      $clean = Purifier::clean(Input::get('editordata'));
+      $post->body = $clean;
       $post->save();
-      return redirect('home');
+      return redirect('blog');
     }
 
     /**
