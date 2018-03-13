@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Setting;
+use Validator;
+
 
 class SetupController extends Controller
 {
@@ -32,9 +35,30 @@ class SetupController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Setting $settings)
     {
-        //
+      $validator = Validator::make($request->all(), [
+         'sitetitle' => 'required',
+         'name' => 'required',
+         'bio' => 'required',
+         'twitter' => 'required',
+         'github' => 'required',
+     ]);
+
+     if ($validator->fails()) {
+         return redirect('setup/')
+                     ->withErrors($validator)
+                     ->withInput();
+     }
+      // If everything validates then do this
+      $settings->sitetitle = $request->sitetitle;
+      $settings->name = $request->name;
+      $settings->bio = $request->bio;
+      $settings->twitter = $request->twitter;
+      $settings->github = $request->github;
+      $settings->save();
+      return redirect('home');
+
     }
 
     /**
