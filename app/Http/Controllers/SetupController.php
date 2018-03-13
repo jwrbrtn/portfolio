@@ -23,7 +23,7 @@ class SetupController extends Controller
      */
     public function create()
     {
-        //
+        return view('setup.create');
     }
 
     /**
