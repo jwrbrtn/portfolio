@@ -42,3 +42,5 @@ Route::delete('/projects/{id}/delete', 'ProjectsController@destroy')->middleware
 /* Setup Routes */
 Route::get('/setup', 'SetupController@create');
 Route::post('/setup', 'SetupController@store');
+
+Route::get('image/create', 'ImagesController@create');

@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Setting;
-use Validator;
 
-
-class SetupController extends Controller
+class ImagesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +23,13 @@ class SetupController extends Controller
      */
     public function create()
     {
-        return view('setup.create');
+
+
+      return view('image/create');
+
+
+
+
     }
 
     /**
@@ -35,33 +38,9 @@ class SetupController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Setting $settings)
+    public function store(Request $request)
     {
-      $validator = Validator::make($request->all(), [
-         'sitetitle' => 'required',
-         'name' => 'required',
-         'bio' => 'required',
-         'twitter' => 'required',
-         'github' => 'required',
-     ]);
-
-     if ($validator->fails()) {
-         return redirect('setup/')
-                     ->withErrors($validator)
-                     ->withInput();
-     }
-
-     $path = $request->file('avatar')->store('avatars');
-      // If everything validates then do this
-      $settings->sitetitle = $request->sitetitle;
-      $settings->name = $request->name;
-      $settings->bio = $request->bio;
-      $settings->twitter = $request->twitter;
-      $settings->github = $request->github;
-      $settings->avatar = $path;
-      $settings->save();
-      return redirect('home');
-
+        //
     }
 
     /**

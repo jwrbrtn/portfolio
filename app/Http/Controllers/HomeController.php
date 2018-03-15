@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Setting;
 
 class HomeController extends Controller
 {
@@ -21,8 +22,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Setting $setting)
     {
-        return view('home');
+        $settings = $setting->first();
+        $storagepath = storage_path();
+        return view('home', compact('settings', 'storagepath'));
     }
 }

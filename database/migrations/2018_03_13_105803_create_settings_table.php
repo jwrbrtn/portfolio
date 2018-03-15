@@ -20,6 +20,7 @@ class CreateSettingsTable extends Migration
             $table->longText('bio');
             $table->longText('twitter');
             $table->longText('github');
+            $table->longText('avatar');
             $table->timestamps();
         });
     }

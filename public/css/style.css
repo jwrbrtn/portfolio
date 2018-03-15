@@ -8,6 +8,13 @@
 }
 
 
+.img-circle {
+    border-radius: 50%;
+    border: 5px solid #809fae;
+    text-align: center;
+}
+
+
 .menu {
   background-color: #2f4050;
   height: 900px;;
