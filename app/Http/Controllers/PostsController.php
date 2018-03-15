@@ -53,9 +53,15 @@ class PostsController extends Controller
                      ->withInput();
      }
       // If everything validates then do this
+      //$path = $request->file('featureimage')->store('public/posts');
+      $file = Input::file('featureimage');
+      $number = rand(1, 10000);
+      $file->move(public_path().'/images/',$number.'.jpg');
+      $post->featureimage = $number . '.jpg';
       $post->title = $request->title;
       $clean = Purifier::clean(Input::get('editordata'));
       $post->body = $clean;
+      //$post->featureimage = $path;
       $post->save();
       return redirect('blog');
     }

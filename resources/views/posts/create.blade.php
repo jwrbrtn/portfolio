@@ -13,7 +13,7 @@
   @endif
 
   <h1 class="title">Create new post</h1>
-<form class="" action="/post/new" method="POST">
+<form class="" action="/post/new" method="POST" enctype="multipart/form-data">
 <div class="field">
   <label class="label">Name</label>
   <div class="control">
@@ -23,6 +23,20 @@
 </div>
 
 
+  <label class="label">Set feature image</label>
+  <div class="file">
+    <label class="file-label">
+      <input class="file-input" type="file" name="featureimage">
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          Choose a file…
+        </span>
+      </span>
+    </label>
+  </div>
 
 <div class="field">
   <label class="label">Message</label>

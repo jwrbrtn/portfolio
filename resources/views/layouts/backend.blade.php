@@ -40,21 +40,28 @@
       General
     </p>
     <ul class="menu-list">
-      <li><a><i class="fas fa-tachometer-alt"></i>  Dashboard</a></li>
-      <li><a><i class="fas fa-pencil-alt"></i>  Create Post</a></li>
-      <li><a><i class="fas fa-folder-open"></i> Create Project</a></li>
+      <li><a href="/home"><i class="fas fa-tachometer-alt"></i>  Dashboard</a></li>
+      <li><a href="/post/new"><i class="fas fa-pencil-alt"></i>  Create Post</a></li>
+      <li><a href="/project/new"><i class="fas fa-folder-open"></i> Create Project</a></li>
     </ul>
     <p class="menu-label">
       Administration
     </p>
+    <ul class="menu-list">
+      <li><a href="/home"><i class="fas fa-tachometer-alt"></i>  Dashboard</a></li>
+      <li><a href="/post/new"><i class="fas fa-pencil-alt"></i>  Create Post</a></li>
+      <li><a href="/project/new"><i class="fas fa-folder-open"></i> Create Project</a></li>
+    </ul>
 
     <p class="menu-label">
       Settings
     </p>
     <ul class="menu-list">
-      <li><a>Payments</a></li>
-      <li><a>Transfers</a></li>
-      <li><a>Balance</a></li>
+      <ul class="menu-list">
+        <li><a href="/home"><i class="fas fa-tachometer-alt"></i>  Dashboard</a></li>
+        <li><a href="/post/new"><i class="fas fa-pencil-alt"></i>  Create Post</a></li>
+        <li><a href="/project/new"><i class="fas fa-folder-open"></i> Create Project</a></li>
+      </ul>
     </ul>
   </aside>
 </div>
@@ -82,7 +89,7 @@
        $('#summernote').summernote({
          placeholder: 'Hello stand alone ui',
          tabsize: 2,
-         height: 100
+         height: 300
        });
      </script>
   </body>

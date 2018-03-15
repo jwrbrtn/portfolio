@@ -51,10 +51,14 @@ class ProjectsController extends Controller
                          ->withErrors($validator)
                          ->withInput();
          }
-
+        //$path = $request->file('featureimage')->store('projects');
+        $file = Input::file('featureimage');
+        $number = rand(1, 10000);
+        $file->move(public_path().'/images/',$number.'.jpg');
         $project->title = $request->title;
         $clean = Purifier::clean(Input::get('editordata'));
         $project->body = $clean;
+        $project->featureimage = $number.'.jpg';
         $project->save();
         return redirect('home');
     }

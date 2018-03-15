@@ -1,9 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 @section('content')
 
 <div class="container">
-<h3>{{$project->title}}</h3>
-<p>{{$project->body}}</p>
+<figure>
+  <img src="/images/{{$project->featureimage}}" alt="">
+</figure>
+<h3 class="is-title">{{$project->title}}</h3>
+{!! $project->body !!}
 </div>
 
 @endsection
