@@ -40,6 +40,7 @@ class SetupController extends Controller
       $validator = Validator::make($request->all(), [
          'sitetitle' => 'required',
          'name' => 'required',
+         'avatar' => 'required',
          'bio' => 'required',
          'twitter' => 'required',
          'github' => 'required',
@@ -60,7 +61,7 @@ class SetupController extends Controller
       $settings->github = $request->github;
       $settings->avatar = $path;
       $settings->save();
-      return redirect('home');
+      return redirect('home')->with('status', 'Installation complete!');
 
     }
 

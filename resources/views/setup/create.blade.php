@@ -2,6 +2,16 @@
 @section('content')
 
 <div class="container">
+  @if ($errors->any())
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+  </div>
+  @endif
 <form class="" action="setup" method="post" enctype="multipart/form-data">
   <div class="field">
   <label class="label">Site Title</label>

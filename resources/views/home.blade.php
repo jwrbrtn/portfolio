@@ -3,6 +3,12 @@
 @section('content')
 <section class="section">
   <div class="container">
+    @if (session('status'))
+  <div class="notification is-success">
+    <button class="delete"></button>
+            {{ session('status') }}
+  </div>
+    @endif
     <div class="tile is-ancestor">
 <div class="tile is-vertical is-8">
   <div class="tile">
