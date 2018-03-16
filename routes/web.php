@@ -48,3 +48,4 @@ Route::get('image/create', 'ImagesController@create');
 
 /* Messages Routes */
 Route::get('/contact', 'MessagesController@create');
+Route::post('/contact', 'MessagesController@store');

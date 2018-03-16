@@ -1,79 +1,44 @@
 @extends('layouts.frontend')
 @section('content')
 <div class="container">
-<div class="field">
+  @if (session('status'))
+<div class="notification is-success">
+  <button class="delete"></button>
+          {{ session('status') }}
+</div>
+  @endif
+
+  @if ($errors->any())
+  <div class="notification is-danger">
+    <button class="delete"></button>
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+  </div>
+  @endif
+<form class="" action="/contact" method="post">
+  <div class="field">
   <label class="label">Name</label>
   <div class="control">
-    <input class="input" type="text" placeholder="Text input">
+    <input class="input" type="text" name="name" placeholder="Text input">
   </div>
 </div>
-
-<div class="field">
-  <label class="label">Username</label>
-  <div class="control has-icons-left has-icons-right">
-    <input class="input is-success" type="text" placeholder="Text input" value="bulma">
-    <span class="icon is-small is-left">
-      <i class="fas fa-user"></i>
-    </span>
-    <span class="icon is-small is-right">
-      <i class="fas fa-check"></i>
-    </span>
-  </div>
-  <p class="help is-success">This username is available</p>
-</div>
+{{csrf_field()}}
 
 <div class="field">
   <label class="label">Email</label>
-  <div class="control has-icons-left has-icons-right">
-    <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
-    <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
-    <span class="icon is-small is-right">
-      <i class="fas fa-exclamation-triangle"></i>
-    </span>
+  <div class="control">
+    <input class="input" type="email" name="email" placeholder="Text input">
   </div>
-  <p class="help is-danger">This email is invalid</p>
 </div>
 
-<div class="field">
-  <label class="label">Subject</label>
-  <div class="control">
-    <div class="select">
-      <select>
-        <option>Select dropdown</option>
-        <option>With options</option>
-      </select>
-    </div>
-  </div>
-</div>
 
 <div class="field">
   <label class="label">Message</label>
   <div class="control">
-    <textarea class="textarea" placeholder="Textarea"></textarea>
-  </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <label class="checkbox">
-      <input type="checkbox">
-      I agree to the <a href="#">terms and conditions</a>
-    </label>
-  </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <label class="radio">
-      <input type="radio" name="question">
-      Yes
-    </label>
-    <label class="radio">
-      <input type="radio" name="question">
-      No
-    </label>
+    <textarea class="textarea" name="body" placeholder="Textarea"></textarea>
   </div>
 </div>
 
@@ -85,6 +50,7 @@
     <button class="button is-text">Cancel</button>
   </div>
 </div>
+</form>
 </div>
 
 @endsection

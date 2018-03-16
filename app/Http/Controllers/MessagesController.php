@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Message;
+use Validator;
 
 class MessagesController extends Controller
 {
@@ -32,9 +34,28 @@ class MessagesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Message $message)
     {
-        //
+
+      $validator = Validator::make($request->all(), [
+         'email' => 'required|max:255',
+         'name' => 'required',
+         'body' => 'required'
+     ]);
+
+     if ($validator->fails()) {
+         return redirect('/contact')
+                     ->withErrors($validator)
+                     ->withInput();
+     }
+
+      // If validation succe
+      $message->email = $request->email;
+      $message->name = $request->name;
+      $message->body = $request->body;
+      $message->save();
+      return redirect('/contact')->with('status', 'Your message was sent!');
+
     }
 
     /**
