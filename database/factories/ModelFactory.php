@@ -24,6 +24,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Post::class, function(Faker\Generator $faker){
     return [
+      'featureimage' => "Hello world",
       'title' => $faker->realText($maxNbChars = 50),
       'body' => $faker->realText($maxNbChars = 1000),
     ];

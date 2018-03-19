@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>{{$settings->sitetitle}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
@@ -46,14 +46,14 @@
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
-            Jessica Warburton
+            {{$settings->name}}
           </h1>
           <h2 class="subtitle">
-          Melbourne Web Developer</br>    <i class="icon is-medium fab fa-github"></i>
+          {{$settings->subtitle}}</br>    <i class="icon is-medium fab fa-github"></i>
                <i class="icon is-medium fab fa-twitter"></i>
           </h2>
           <p>
-Aldus Corporation, which later merged with Adobe Systems, helped bring Lorem Ipsum into the information age with its 1985 flagship software Aldus PageMaker. The program came bundled with Lorem Ipsum dummy text to help with laying out page content, and other word processors like Microsoft Word followed suit. More recently the growth of web design has helped proliferate Lorem Ipsum across the internet as a placeholder for laying out websites and blogs– and in some cases the final content (don't let that be you!).
+{{$settings->bio}}
           </p>
         </div>
       </div>
@@ -66,22 +66,24 @@ Aldus Corporation, which later merged with Adobe Systems, helped bring Lorem Ips
       <div class="columns">
         <div class="column">
           <h3 class="title is-3"> Blog Posts</h3>
-          <a href="#">View All Blog Posts</a>
+          <a href="/blog">View All Blog Posts</a>
           <hr>
-          <p><a>How to win the lottery and stop worrying about atomic chaos</a></p>
-          <p><a>How to win the lottery and stop worrying about atomic chaos</a></p>
-          <p><a>How to win the lottery and stop worrying about atomic chaos</a></p>
-          <p><a>How to win the lottery and stop worrying about atomic chaos</a></p>
+          @foreach($posts as $post)
+
+          <p><a href="/blog/{{$post->id}}">{{$post->title}}</a></p>
+
+          @endforeach
         </div>
         <div class="column">
           <h3 class="title">Recent Projects
           </h3>
-          <a href="#">View All Projects</a>
+          <a href="/projects">View All Projects</a>
           <hr>
-          <p><a>How to win the lottery and stop worrying about atomic chaos</a></p>
-          <p><a>How to win the lottery and stop worrying about atomic chaos</a></p>
-          <p><a>How to win the lottery and stop worrying about atomic chaos</a></p>
-          <p><a>How to win the lottery and stop worrying about atomic chaos</a></p>
+          @foreach($projects as $project)
+
+          <p><a href="/projects/{{$project->id}}">{{$project->title}}</a></p>
+
+          @endforeach
         </div>
 
       </div>

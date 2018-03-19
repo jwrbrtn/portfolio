@@ -4,26 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Setting;
-use Validator;
+use App\Project;
+use App\Post;
 
-
-class SetupController extends Controller
+class HomePageController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-
-     public function showHomePage(Setting $setting){
-       $settings = $setting->first();
-       return view('welcome', compact('settings'));
-     }
-
-    public function index()
+    public function index(Project $project, Post $post, Setting $setting)
     {
-        //
+        $projects = $project::orderBy('created_at', 'desc')->take(5)->get();
+        $posts = $post::orderBy('created_at', 'desc')->take(5)->get();
+        $settings = $setting->first();
+        return view('welcome', compact('projects', 'posts', 'settings'));
     }
 
     /**
@@ -33,7 +29,7 @@ class SetupController extends Controller
      */
     public function create()
     {
-        return view('setup.create');
+        //
     }
 
     /**
@@ -42,34 +38,9 @@ class SetupController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Setting $settings)
+    public function store(Request $request)
     {
-      $validator = Validator::make($request->all(), [
-         'sitetitle' => 'required',
-         'name' => 'required',
-         'avatar' => 'required',
-         'bio' => 'required',
-         'twitter' => 'required',
-         'github' => 'required',
-     ]);
-
-     if ($validator->fails()) {
-         return redirect('setup/')
-                     ->withErrors($validator)
-                     ->withInput();
-     }
-
-     $path = $request->file('avatar')->store('avatars');
-      // If everything validates then do this
-      $settings->sitetitle = $request->sitetitle;
-      $settings->name = $request->name;
-      $settings->bio = $request->bio;
-      $settings->twitter = $request->twitter;
-      $settings->github = $request->github;
-      $settings->avatar = $path;
-      $settings->save();
-      return redirect('home')->with('status', 'Installation complete!');
-
+        //
     }
 
     /**

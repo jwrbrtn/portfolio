@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware('registered');
+
+
+Route::get('/', 'HomePageController@index')->middleware('registered');
+
 
 Auth::routes();
 
