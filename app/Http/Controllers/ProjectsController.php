@@ -33,6 +33,12 @@ class ProjectsController extends Controller
         return view('projects.create');
     }
 
+    public function showAll(Project $project)
+    {
+      $projects = $project::all();
+      return view('projects.showAll', compact('projects'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *

@@ -48,9 +48,8 @@
       Administration
     </p>
     <ul class="menu-list">
-      <li><a href="/home"><i class="fas fa-tachometer-alt"></i>  Dashboard</a></li>
-      <li><a href="/post/new"><i class="fas fa-pencil-alt"></i>  Create Post</a></li>
-      <li><a href="/project/new"><i class="fas fa-folder-open"></i> Create Project</a></li>
+      <li><a href="/home"><i class="fas fa-th"></i>  View All Posts</a></li>
+      <li><a href="/post/new"><i class="far fa-list-alt"></i>  View All Projects</a></li>
     </ul>
 
     <p class="menu-label">
@@ -58,9 +57,8 @@
     </p>
     <ul class="menu-list">
       <ul class="menu-list">
-        <li><a href="/home"><i class="fas fa-tachometer-alt"></i>  Dashboard</a></li>
-        <li><a href="/post/new"><i class="fas fa-pencil-alt"></i>  Create Post</a></li>
-        <li><a href="/project/new"><i class="fas fa-folder-open"></i> Create Project</a></li>
+        <li><a href="/home"><i class="fas fa-cog"></i>  Edit Settings</a></li>
+
       </ul>
     </ul>
   </aside>

@@ -38,7 +38,7 @@ Route::post('/project/new', 'ProjectsController@store')->middleware('auth');
 Route::get('/projects/{id}/edit', 'ProjectsController@edit')->middleware('auth');
 Route::patch('/projects/{id}/edit', 'ProjectsController@update')->middleware('auth');
 Route::delete('/projects/{id}/delete', 'ProjectsController@destroy')->middleware('auth');
-
+Route::get('/project/all', 'ProjectsController@showAll');
 
 /* Setup Routes */
 Route::get('/setup', 'SetupController@create');
