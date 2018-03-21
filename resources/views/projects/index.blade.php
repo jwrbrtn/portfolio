@@ -18,8 +18,8 @@
 
   @foreach($projects as $project)
 
-  @endforeach
 
+  @endforeach
 </div>
 
 @endsection
