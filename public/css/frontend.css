@@ -12,3 +12,34 @@
 a {
   color: #363636;
 }
+
+p {
+  font-size: 14px;
+}
+
+.subtitle {
+  font-size: 12px;
+}
+
+
+.title {
+  font-size: 20px;
+}
+
+.title a {
+  font-size: 20px;
+}
+
+.navbar-item {
+  font-size: 10px;
+}
+
+.label {
+  font-size: 12px;
+}
+
+.blurb {
+-webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,-10)));
+margin-bottom: -20px;
+
+}
