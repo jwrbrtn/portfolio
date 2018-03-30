@@ -5,7 +5,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        Projects
+ Projects
       </h1>
 
     </div>

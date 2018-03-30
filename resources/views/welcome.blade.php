@@ -68,12 +68,12 @@
     <div class="container">
       <div class="columns">
         <div class="column">
-          <h3 class="title is-3"> Blog Posts</h3>
+          <h3 class="title">Recent Blog Posts</h3>
           <a href="/blog">View All Blog Posts</a>
           <hr>
           @foreach($posts as $post)
 
-          <p><a href="/blog/{{$post->id}}">{{$post->title}}</a></p>
+          <p><a href="/blog/{{$post->id}}">{{$post->title}}</a></p></br>
 
           @endforeach
         </div>
@@ -84,7 +84,7 @@
           <hr>
           @foreach($projects as $project)
 
-          <p><a href="/projects/{{$project->id}}">{{$project->title}}</a></p>
+          <p><a href="/projects/{{$project->id}}">{{$project->title}}</a></p></br>
 
           @endforeach
         </div>
