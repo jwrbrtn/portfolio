@@ -1,30 +1,41 @@
 @extends('layouts.backend')
 @section('content')
 
-<section class="section">
-<div class="container">
-<table class="table">
-<thead>
-@foreach($projects as $project)
+<div class="container form-section">
+<h1 class="title">All Projects</h1>
 
+<table class="table is-fullwidth">
+  <thead>
     <tr>
-      <th><abbr title="Position">Pos</abbr></th>
+      <th><abbr title="Title">Title</abbr></th>
       <th>Team</th>
-      <th><abbr title="Played">Pld</abbr></th>
-      <th><abbr title="Won">W</abbr></th>
-      <th><abbr title="Drawn">D</abbr></th>
-      <th><abbr title="Lost">L</abbr></th>
-      <th><abbr title="Goals for">GF</abbr></th>
-      <th><abbr title="Goals against">GA</abbr></th>
-      <th><abbr title="Goal difference">GD</abbr></th>
-      <th><abbr title="Points">Pts</abbr></th>
-      <th>Qualification or relegation</th>
+      <th>Created At</th>
+      <th>Last Updated</th>
+      <th><abbr title="Comments">Comments</abbr></th>
+      <th><abbr title="Status">Status</abbr></th>
+      <th><abbr title="Status">Edit</abbr></th>
+      <th><abbr title="Status">Delete</abbr></th>
     </tr>
-@endforeach
   </thead>
 
+  <tbody>
+    <tr>
+      @foreach($projects as $project)
+      <th><abbr title="Title">{{$project->title}}</abbr></th>
+      <th>Team</th>
+      <th><abbr title="Created At">{{$project->created_at}}</abbr></th>
+      <th><abbr title="Last Updated">{{$project->updated_at}}</abbr></th>
+      <th><abbr title="Comments">Comments</abbr></th>
+      <th><abbr title="Status">Status</abbr></th>
+      <th><abbr title="Status"><a href="/blog/{{$project->id}}/edit" class="button is-primary">Edit</a></abbr></th>
+      <th><abbr title="Status"><a class="button is-danger">Delete</a></abbr></th>
+      @endforeach
+    </tr>
+  </tbody>
 </table>
+
+
+
 </div>
-</section>
 
 @endsection
