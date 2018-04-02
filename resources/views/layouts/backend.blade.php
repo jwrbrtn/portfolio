@@ -49,7 +49,7 @@
     </p>
     <ul class="menu-list">
       <li><a href="/allposts"><i class="fas fa-th"></i>  View All Posts</a></li>
-      <li><a href="/post/new"><i class="far fa-list-alt"></i>  View All Projects</a></li>
+      <li><a href="/allprojects"><i class="far fa-list-alt"></i>  View All Projects</a></li>
     </ul>
 
     <p class="menu-label">

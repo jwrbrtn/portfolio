@@ -10,7 +10,7 @@ class Post extends Model
     protected $fillable = ['title', 'body', 'featureimage'];
 
 
-    function getAllPosts(){
+    public function getAllPosts(){
       $posts = DB::table('posts')->orderBy('created_at', 'desc')->get();
       return $posts;
     }

@@ -35,7 +35,7 @@ class ProjectsController extends Controller
 
     public function showAll(Project $project)
     {
-      $projects = $project::all();
+      $projects = $project->getAllProjects();
       return view('projects.showAll', compact('projects'));
     }
 
