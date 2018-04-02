@@ -16,6 +16,6 @@ class ExampleTest extends TestCase
     {
 
         $this->visit('/')
-             ->see("Laravel");
+             ->see("Jessica Warburton"); // This should be 
     }
 }

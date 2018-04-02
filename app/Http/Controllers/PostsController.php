@@ -53,11 +53,6 @@ class PostsController extends Controller
                      ->withInput();
      }
       // If everything validates then do this
-      //$path = $request->file('featureimage')->store('public/posts');
-      $file = Input::file('featureimage');
-      $number = rand(1, 10000);
-      $file->move(public_path().'/images/',$number.'.jpg');
-      $post->featureimage = $number . '.jpg';
       $post->title = $request->title;
       $clean = Purifier::clean(Input::get('editordata'));
       $post->body = $clean;
@@ -77,6 +72,16 @@ class PostsController extends Controller
         $post = Post::find($id);
         return view('posts.show', compact('post'));
     }
+
+
+
+    public function showAll(){
+      $posts = DB::table('posts')->orderBy('created_at', 'desc')->get();
+      return view('posts.showAll', compact('posts'));
+    }
+
+
+
 
     /**
      * Show the form for editing the specified resource.

@@ -29,16 +29,23 @@ Route::post('/post/new', 'PostsController@store')->middleware('auth');
 Route::get('/blog/{id}/edit', 'PostsController@edit')->middleware('auth');
 Route::patch('/blog/{id}/edit', 'PostsController@update')->middleware('auth');
 Route::delete('/blog/{id}/delete', 'PostsController@destroy')->middleware('auth');
+Route::get('/allposts', 'PostsController@showAll')->middleware('auth');
+
 
 /* Projects Routes */
+//front end
 Route::get('/projects', 'ProjectsController@index');
 Route::get('/projects/{id}', 'ProjectsController@show');
+// Back end
 Route::get('/project/new', 'ProjectsController@create')->middleware('auth');
 Route::post('/project/new', 'ProjectsController@store')->middleware('auth');
 Route::get('/projects/{id}/edit', 'ProjectsController@edit')->middleware('auth');
 Route::patch('/projects/{id}/edit', 'ProjectsController@update')->middleware('auth');
 Route::delete('/projects/{id}/delete', 'ProjectsController@destroy')->middleware('auth');
 Route::get('/project/all', 'ProjectsController@showAll');
+
+
+
 
 /* Setup Routes */
 Route::get('/setup', 'SetupController@create');

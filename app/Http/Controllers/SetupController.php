@@ -45,9 +45,7 @@ class SetupController extends Controller
     public function store(Request $request, Setting $settings)
     {
       $validator = Validator::make($request->all(), [
-         'sitetitle' => 'required',
          'name' => 'required',
-         'avatar' => 'required',
          'bio' => 'required',
          'twitter' => 'required',
          'github' => 'required',
@@ -59,14 +57,12 @@ class SetupController extends Controller
                      ->withInput();
      }
 
-     $path = $request->file('avatar')->store('avatars');
+
       // If everything validates then do this
-      $settings->sitetitle = $request->sitetitle;
       $settings->name = $request->name;
       $settings->bio = $request->bio;
       $settings->twitter = $request->twitter;
       $settings->github = $request->github;
-      $settings->avatar = $path;
       $settings->save();
       return redirect('home')->with('status', 'Installation complete!');
 

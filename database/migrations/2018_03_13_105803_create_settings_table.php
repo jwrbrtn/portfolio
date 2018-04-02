@@ -15,12 +15,13 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('sitetitle');
             $table->string('name');
+            $table->string('subtitle');
             $table->longText('bio');
             $table->longText('twitter');
             $table->longText('github');
             $table->longText('avatar');
+            $table->longText('footer');
             $table->timestamps();
         });
     }
