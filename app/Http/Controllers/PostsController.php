@@ -75,8 +75,8 @@ class PostsController extends Controller
 
 
 
-    public function showAll(){
-      $posts = DB::table('posts')->orderBy('created_at', 'desc')->get();
+    public function showAll(Post $post){
+      $posts = $post->getAllPosts();
       return view('posts.showAll', compact('posts'));
     }
 
