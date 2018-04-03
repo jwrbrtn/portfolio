@@ -51,6 +51,8 @@ Route::get('/allprojects', 'ProjectsController@showAll');
 Route::get('/setup', 'SetupController@create');
 Route::post('/setup', 'SetupController@store');
 Route::get('image/create', 'ImagesController@create');
+Route::get('/settings/{id}/edit', 'SetupController@edit');
+Route::patch('/settings/{id}/edit', 'SetupController@update');
 
 
 

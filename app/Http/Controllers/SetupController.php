@@ -60,9 +60,11 @@ class SetupController extends Controller
 
       // If everything validates then do this
       $settings->name = $request->name;
+      $settings->subtitle = $request->subtitle;
       $settings->bio = $request->bio;
-      $settings->twitter = $request->twitter;
       $settings->github = $request->github;
+      $settings->twitter = $request->twitter;
+      $settings->footer = $request->footer;
       $settings->save();
       return redirect('home')->with('status', 'Installation complete!');
 
@@ -87,7 +89,8 @@ class SetupController extends Controller
      */
     public function edit($id)
     {
-        //
+        $settings = Setting::find($id);
+        return view('setup.edit', compact('settings'));
     }
 
     /**
@@ -99,7 +102,15 @@ class SetupController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $settings = Setting::find($id);
+      $settings->name = $request->name;
+      $settings->subtitle = $request->subtitle;
+      $settings->bio = $request->bio;
+      $settings->github = $request->github;
+      $settings->twitter = $request->twitter;
+      $settings->footer = $request->footer;
+      $settings->save();
+      return redirect('home');
     }
 
     /**

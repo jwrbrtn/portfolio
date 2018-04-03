@@ -57,7 +57,7 @@
     </p>
     <ul class="menu-list">
       <ul class="menu-list">
-        <li><a href="/home"><i class="fas fa-cog"></i>  Edit Settings</a></li>
+        <li><a href="/settings/1/edit"><i class="fas fa-cog"></i>  Edit Settings</a></li>
 
       </ul>
     </ul>

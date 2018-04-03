@@ -1,7 +1,7 @@
-@extends('layouts.newapp')
+@extends('layouts.backend')
 @section('content')
 
-<div class="container">
+<div class="container form-section">
   @if ($errors->any())
   <div class="notification is-danger">
     <button class="delete"></button>
@@ -12,47 +12,50 @@
     </ul>
   </div>
   @endif
-<form class="" action="setup" method="post" enctype="multipart/form-data">
+
+<h1 class="title">Edit Settings</h1>
+<form class="" action="/settings/{{$settings->id}}/edit" method="POST" enctype="multipart/form-data">
   <div class="field">
   <label class="label">Display Name</label>
   <div class="control">
-    <input class="input" name="name" type="text" placeholder="Full Name">
+    <input class="input" name="name" type="text" value="{{$settings->name}}" placeholder="Full Name">
   </div>
 </div>
 
 <div class="field">
 <label class="label">Subtitle</label>
 <div class="control">
-  <input class="input" name="subtitle" type="text" placeholder="Full Name">
+  <input class="input" name="name" type="text" value="{{$settings->name}}" placeholder="Full Name">
 </div>
 </div>
 
 <div class="field">
   <label class="label">About Me</label>
   <div class="control">
-    <textarea class="textarea" name="bio" placeholder="Write a short bio"></textarea>
+    <textarea class="textarea" name="bio" rows="10" placeholder="Write a short bio">{{$settings->bio}}</textarea>
   </div>
 </div>
 
 <div class="field">
-  <label class="label">Footer</label>
+  <label class="label">Footer Text</label>
   <div class="control">
-    <textarea class="textarea" name="footer" placeholder="Write a short bio"></textarea>
+    <textarea class="textarea" name="footer" rows="5" placeholder="Text to include in footer">{{$settings->footer}}</textarea>
   </div>
 </div>
 
   <div class="field">
   <label class="label">Twitter</label>
   <div class="control">
-    <input class="input" name="twitter" type="text" placeholder="Your twitter profile">
+    <input class="input" name="twitter" value="{{$settings->twitter}}" type="text" placeholder="Your twitter profile">
   </div>
 </div>
 {{csrf_field()}}
+<input type="hidden" name="_method" value="PATCH">
 
   <div class="field">
   <label class="label">Github</label>
   <div class="control">
-    <input class="input" name="github" type="text" placeholder="Your Github Profile">
+    <input class="input" name="github" value="{{$settings->github}}" type="text" placeholder="Your Github Profile">
   </div>
 </div>
 
