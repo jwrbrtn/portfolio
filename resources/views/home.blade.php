@@ -15,18 +15,17 @@
     <div class="tile is-parent is-vertical">
       <article class="tile is-child notification is-primary">
         <p class="title">{{$posts}}</p>
-        <p class="subtitle">Top tile</p>
+        <p class="subtitle">Posts</p>
       </article>
       <article class="tile is-child notification is-warning">
-        <p class="title">...tiles</p>
-        <p class="subtitle">Bottom tile</p>
+        <p class="title">{{$projects}}</p>
+        <p class="subtitle">projects</p>
       </article>
     </div>
     <div class="tile is-parent">
       <article class="tile is-child notification is-info">
-        <p class="title">Middle tile</p>
-        <p class="subtitle">With an image</p>
-
+        <p class="title">{{$messages}}</p>
+        <p class="subtitle">Messages
       </article>
     </div>
   </div>
