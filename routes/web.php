@@ -57,5 +57,8 @@ Route::patch('/settings/{id}/edit', 'SetupController@update');
 
 
 /* Messages Routes */
+Route::get('/messages', 'MessagesController@index');
+Route::get('/messages/{id}/show', 'MessagesController@show');
 Route::get('/contact', 'MessagesController@create');
 Route::post('/contact', 'MessagesController@store');
+Route::post('/messages/{id}/delete', 'MessagesController@destroy');

@@ -14,7 +14,7 @@
   <div class="tile">
     <div class="tile is-parent is-vertical">
       <article class="tile is-child notification is-primary">
-        <p class="title">Vertical...</p>
+        <p class="title">{{$posts}}</p>
         <p class="subtitle">Top tile</p>
       </article>
       <article class="tile is-child notification is-warning">

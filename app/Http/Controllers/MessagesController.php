@@ -15,7 +15,8 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        //
+        $messages = Message::all();
+        return view('messages.index', compact('messages'));
     }
 
     /**
@@ -66,7 +67,8 @@ class MessagesController extends Controller
      */
     public function show($id)
     {
-        //
+        $message = Message::find($id);
+        return view('messages.show', compact('message'));
     }
 
     /**
@@ -100,6 +102,8 @@ class MessagesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $message = Message::find($id);
+        $message->delete();
+        return redirect('home')->with('status', 'Message Deleted');
     }
 }

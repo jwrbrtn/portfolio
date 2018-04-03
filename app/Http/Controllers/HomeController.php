@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Setting;
+use App\Post;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,10 @@ class HomeController extends Controller
     {
         $settings = $setting->first();
         $storagepath = storage_path();
-        return view('home', compact('settings', 'storagepath'));
+        $posts = Post::all()->count();
+
+
+
+        return view('home', compact('settings', 'storagepath', 'posts'));
     }
 }
