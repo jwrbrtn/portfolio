@@ -18,9 +18,7 @@
 
   @foreach($posts as $post)
   <div class="columns">
-  <div class="column is-one-quarter">
-    <img class="" src="/images/{{$post->featureimage}}" alt="">
-  </div>
+
   <div class="column">
     <h3 class="title is-3"><a href="/blog/{{$post->id}}">{{$post->title}}</a></h3>
     <h3 class="subtitle is-6">Published {{ Carbon\Carbon::parse($post->created_at)->diffForHumans() }} by <a>Jessica Warburton</a></h3>
