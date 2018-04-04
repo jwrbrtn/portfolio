@@ -27,6 +27,7 @@ $factory->define(App\Post::class, function(Faker\Generator $faker){
       'featureimage' => "Hello world",
       'title' => $faker->realText($maxNbChars = 50),
       'body' => $faker->realText($maxNbChars = 1000),
+      'excerpt'=> $faker->realText($maxNbChars = 350)
     ];
 });
 

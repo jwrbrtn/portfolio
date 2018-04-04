@@ -5,7 +5,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        Blog Posts
+ Blog Posts
       </h1>
 
     </div>
@@ -13,24 +13,20 @@
 </section>
 
 </section></br></br>
-<div class="container">
+<div class="columns">
+<div class="column is-three-fifths is-offset-one-fifth">
 
 
   @foreach($posts as $post)
-  <div class="columns">
 
-  <div class="column">
-    <h3 class="title is-3"><a href="/blog/{{$post->id}}">{{$post->title}}</a></h3>
-    <h3 class="subtitle is-6">Published {{ Carbon\Carbon::parse($post->created_at)->diffForHumans() }} by <a>Jessica Warburton</a></h3>
-      <p class="blurb">{!! $post->body !!}</p></br>
-    <a class="button is-primary" href="/blog/{{$post->id}}" type="button" name="button">Read More</a>
-  </div>
-
-
-  </div>
+  <h1 class="title">{{$post->title}}</h1>
+  <h1 class="subtitle">Published {{$post->created_at}}</h1>
+  <p class="excerpt">{{$post->excerpt}}</p></br>
+  <a class="button" href="blog/{{$post->id}}">Read More</a></br></br>
+  <hr>
   @endforeach
-
-  {{ $posts->links() }}</br>
 </div>
+</div></br>
 
+{{ $posts->links('posts.pagination') }}
 @endsection

@@ -19,8 +19,8 @@
   </thead>
 
   <tbody>
-    <tr>
       @foreach($posts as $post)
+      <tr>
       <th><abbr title="Title">{{$post->title}}</abbr></th>
       <th>Team</th>
       <th><abbr title="Created At">{{$post->created_at}}</abbr></th>
@@ -29,8 +29,8 @@
       <th><abbr title="Status">Status</abbr></th>
       <th><abbr title="Status"><a href="/blog/{{$post->id}}/edit" class="button is-primary">Edit</a></abbr></th>
       <th><abbr title="Status"><a class="button is-danger">Delete</a></abbr></th>
+      </tr>
       @endforeach
-    </tr>
   </tbody>
 </table>
 

@@ -18,7 +18,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = DB::table('posts')->paginate(15);
+        $posts = DB::table('posts')->paginate(5);
         return view('posts.index', compact('posts'));
     }
 
@@ -56,6 +56,9 @@ class PostsController extends Controller
       $post->title = $request->title;
       $clean = Purifier::clean(Input::get('editordata'));
       $post->body = $clean;
+
+      $stripped = strip_tags($clean);
+      $post->excerpt = substr($stripped,0,350) . "...";
       //$post->featureimage = $path;
       $post->save();
       return redirect('blog');
