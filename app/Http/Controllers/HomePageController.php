@@ -19,7 +19,7 @@ class HomePageController extends Controller
         $projects = $project::orderBy('created_at', 'desc')->take(5)->get();
         $posts = $post::orderBy('created_at', 'desc')->take(5)->get();
         $settings = $setting->first();
-        return view('welcome', compact('projects', 'posts', 'settings'));
+        return view('welcome', compact('projects', 'posts'));
     }
 
     /**

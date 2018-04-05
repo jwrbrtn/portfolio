@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Mews\Purifier\PurifierServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
 
         /*
          * Package Service Providers...
