@@ -13,10 +13,16 @@
 
 
 
+
+
+
+
 Route::get('/', 'HomePageController@index')->middleware('registered');
 
 
 Auth::routes();
+
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->middleware('doesUserExist');
 
 Route::get('/home', 'HomeController@index')->middleware('setup');
 
@@ -62,3 +68,9 @@ Route::get('/messages/{id}/show', 'MessagesController@show');
 Route::get('/contact', 'MessagesController@create');
 Route::post('/contact', 'MessagesController@store');
 Route::post('/messages/{id}/delete', 'MessagesController@destroy');
+
+// Logout
+Route::get('/logout', function(){
+  Auth::logout();
+  return redirect('/');
+});

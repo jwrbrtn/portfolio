@@ -54,5 +54,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'registered'=> \App\Http\Middleware\CheckRegistered::class,
         'setup' => \App\Http\Middleware\CheckSetup::class,
+        'doesUserExist' => \App\Http\Middleware\doesUserExist::class,
     ];
 }
