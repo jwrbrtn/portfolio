@@ -79,7 +79,7 @@ class PostsController extends Controller
 
 
     public function showAll(Post $post){
-      $posts = $post->getAllPosts();
+      $posts = DB::table('posts')->paginate(10);
       return view('posts.showAll', compact('posts'));
     }
 

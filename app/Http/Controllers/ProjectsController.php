@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Input;
 use Mews\Purifier\Facades\Purifier;
 
 use Validator;
-
+use DB;
 
 class ProjectsController extends Controller
 {
@@ -35,7 +35,7 @@ class ProjectsController extends Controller
 
     public function showAll(Project $project)
     {
-      $projects = $project->getAllProjects();
+      $projects = DB::table('projects')->paginate(10);
       return view('projects.showAll', compact('projects'));
     }
 

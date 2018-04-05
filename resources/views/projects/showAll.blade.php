@@ -19,8 +19,8 @@
   </thead>
 
   <tbody>
-    <tr>
       @foreach($projects as $project)
+      <tr>
       <th><abbr title="Title">{{$project->title}}</abbr></th>
       <th>Team</th>
       <th><abbr title="Created At">{{$project->created_at}}</abbr></th>
@@ -29,11 +29,11 @@
       <th><abbr title="Status">Status</abbr></th>
       <th><abbr title="Status"><a href="/projects/{{$project->id}}/edit" class="button is-primary">Edit</a></abbr></th>
       <th><abbr title="Status"><a class="button is-danger">Delete</a></abbr></th>
+      </tr>
       @endforeach
-    </tr>
   </tbody>
 </table>
-
+{{ $projects->links('posts.pagination') }}
 
 
 </div>
