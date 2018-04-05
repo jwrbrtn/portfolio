@@ -4,9 +4,9 @@
 /.idea
 Homestead.json
 Homestead.yaml
-.env
 vhost.conf
 web.dockerfile
 app.dockerfile
 docker-compose.yml
 Dockerfile
+.env
