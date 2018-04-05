@@ -8,6 +8,12 @@
   padding-bottom: 100px;
 }
 
+
+.container {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
 .pagination-link.is-current {
   background-color: #00d1b2;
   border: 1px solid #00d1b2;

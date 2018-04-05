@@ -13,6 +13,7 @@
 </section>
 
 </section></br></br>
+<div class="container">
 <div class="columns">
 <div class="column is-three-fifths is-offset-one-fifth">
 
@@ -25,8 +26,10 @@
   <a class="button" href="blog/{{$post->id}}">Read More</a></br></br>
   <hr>
   @endforeach
+
 </div>
 </div></br>
 
 {{ $posts->links('posts.pagination') }}
+</div>
 @endsection
