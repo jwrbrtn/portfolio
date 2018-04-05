@@ -5,7 +5,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
- Blog Posts
+Projects
       </h1>
 
     </div>
@@ -22,8 +22,8 @@
 
   <h1 class="title">{{$project->title}}</h1>
   <h1 class="subtitle">Published {{$project->created_at}}</h1>
-  <p class="excerpt">{{$project->excerpt}}</p></br>
-  <a class="button" href="blog/{{$project->id}}">Read More</a></br></br>
+
+  <a class="button" href="projects/{{$project->id}}">Read More</a></br></br>
   <hr>
   @endforeach
 

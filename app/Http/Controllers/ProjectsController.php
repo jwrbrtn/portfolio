@@ -19,7 +19,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = DB::table('projects')->paginate(5);
         return view('projects.index', compact('projects'));
     }
 
