@@ -17,6 +17,12 @@
   margin-top: -20px;
 }
 
+
+.content h3{
+  margin-top: 0px;
+}
+
+
 a {
   color: #363636;
 }
