@@ -23,6 +23,15 @@
 </div>
 
 
+<div class="field">
+  <label class="label">Slug</label>
+  <div class="control">
+    <input name="slug" class="input" type="text" placeholder="Text input">
+
+  </div>
+</div>
+
+
   <label class="label">Set feature image</label>
   <div class="file">
     <label class="file-label">

@@ -44,6 +44,7 @@ class PostsController extends Controller
 
       $validator = Validator::make($request->all(), [
          'title' => 'required|unique:posts|max:255',
+         'slug' => 'required|unique:posts|max:255',
          'editordata' => 'required',
      ]);
 
@@ -60,6 +61,7 @@ class PostsController extends Controller
       $stripped = strip_tags($clean);
       $post->excerpt = substr($stripped,0,350) . "...";
       //$post->featureimage = $path;
+      $post->slug = $request->slug;
       $post->save();
       return redirect('blog');
     }
@@ -70,9 +72,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $post = Post::find($id);
+        $post = Post::where('slug', $slug)->first();
         return view('posts.show', compact('post'));
     }
 
@@ -92,9 +94,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        $post = Post::find($id);
+        $post = Post::where('slug', $slug)->first();
         return view('posts.edit', compact('post'));
     }
 
@@ -105,13 +107,13 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        $post = Post::find($id);
+        $post = Post::where('slug', $slug)->first();
         $post->title = $request->title;
         $post->body = $request->body;
         $post->save();
-        return view('home');
+        return redirect('/');
     }
 
     /**
@@ -120,10 +122,10 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        $post = Post::find($id);
+        $post = Post::where('slug', $slug)->first();
         $post->delete();
-        return view('home');
+        return redirect('/');
     }
 }

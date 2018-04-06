@@ -29,12 +29,12 @@ Route::get('/home', 'HomeController@index')->middleware('setup');
 
 /* Posts Routes */
 Route::get('/blog', 'PostsController@index');
-Route::get('/blog/{id}', 'PostsController@show');
+Route::get('/blog/{slug}', 'PostsController@show');
 Route::get('/post/new', 'PostsController@create')->middleware('auth');
 Route::post('/post/new', 'PostsController@store')->middleware('auth');
-Route::get('/blog/{id}/edit', 'PostsController@edit')->middleware('auth');
-Route::patch('/blog/{id}/edit', 'PostsController@update')->middleware('auth');
-Route::delete('/blog/{id}/delete', 'PostsController@destroy')->middleware('auth');
+Route::get('/blog/{slug}/edit', 'PostsController@edit')->middleware('auth');
+Route::patch('/blog/{slug}/edit', 'PostsController@update')->middleware('auth');
+Route::delete('/blog/{slug}/delete', 'PostsController@destroy')->middleware('auth');
 Route::get('/allposts', 'PostsController@showAll')->middleware('auth');
 
 

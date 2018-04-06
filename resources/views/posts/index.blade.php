@@ -20,10 +20,10 @@
 
   @foreach($posts as $post)
 
-  <h1 class="title">{{$post->title}}</h1>
+  <h1 class="title"><a href="blog/{{$post->slug}}">{{$post->title}}</a></h1>
   <h1 class="subtitle">Published {{$post->created_at}}</h1>
   <p class="excerpt">{{$post->excerpt}}</p></br>
-  <a class="button" href="blog/{{$post->id}}">Read More</a></br></br>
+  <a class="button" href="blog/{{$post->slug}}">Read More</a></br></br>
   <hr>
   @endforeach
 

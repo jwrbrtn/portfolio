@@ -27,7 +27,7 @@
       <th><abbr title="Last Updated">{{$post->updated_at}}</abbr></th>
       <th><abbr title="Comments">Comments</abbr></th>
       <th><abbr title="Status">Status</abbr></th>
-      <th><abbr title="Status"><a href="/blog/{{$post->id}}/edit" class="button is-primary">Edit</a></abbr></th>
+      <th><abbr title="Status"><a href="/blog/{{$post->slug}}/edit" class="button is-primary">Edit</a></abbr></th>
       <th><abbr title="Status"><a class="button is-danger">Delete</a></abbr></th>
       </tr>
       @endforeach

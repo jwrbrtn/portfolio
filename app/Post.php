@@ -7,6 +7,12 @@ use DB;
 
 class Post extends Model
 {
+
+
+  public function getRouteKeyName(){
+      return 'slug';
+    }
+
     protected $fillable = ['title', 'body', 'featureimage'];
 
 
