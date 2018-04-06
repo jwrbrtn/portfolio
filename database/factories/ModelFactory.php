@@ -26,6 +26,7 @@ $factory->define(App\Post::class, function(Faker\Generator $faker){
     return [
       'featureimage' => "Hello world",
       'title' => $faker->realText($maxNbChars = 50),
+      'slug' => "this-is-slug-" . str_random(10),
       'body' => $faker->realText($maxNbChars = 1000),
       'excerpt'=> $faker->realText($maxNbChars = 350)
     ];
@@ -35,6 +36,7 @@ $factory->define(App\Post::class, function(Faker\Generator $faker){
 $factory->define(App\Project::class, function(Faker\Generator $faker){
     return [
       'title' => $faker->realText($maxNbChars = 50),
+      'slug' => "this-is-slug-" . str_random(10),
       'body' => $faker->realText($maxNbChars = 1000),
     ];
 });
