@@ -41,13 +41,13 @@ Route::get('/allposts', 'PostsController@showAll')->middleware('auth');
 /* Projects Routes */
 //front end
 Route::get('/projects', 'ProjectsController@index');
-Route::get('/projects/{id}', 'ProjectsController@show');
+Route::get('/projects/{slug}', 'ProjectsController@show');
 // Back end
 Route::get('/project/new', 'ProjectsController@create')->middleware('auth');
 Route::post('/project/new', 'ProjectsController@store')->middleware('auth');
-Route::get('/projects/{id}/edit', 'ProjectsController@edit')->middleware('auth');
-Route::patch('/projects/{id}/edit', 'ProjectsController@update')->middleware('auth');
-Route::delete('/projects/{id}/delete', 'ProjectsController@destroy')->middleware('auth');
+Route::get('/projects/{slug}/edit', 'ProjectsController@edit')->middleware('auth');
+Route::patch('/projects/{slug}/edit', 'ProjectsController@update')->middleware('auth');
+Route::delete('/projects/{slug}/delete', 'ProjectsController@destroy')->middleware('auth');
 Route::get('/allprojects', 'ProjectsController@showAll');
 
 

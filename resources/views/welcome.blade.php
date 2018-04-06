@@ -73,7 +73,7 @@
           <hr>
           @foreach($posts as $post)
 
-          <p><a href="/blog/{{$post->id}}">{{$post->title}}</a></p></br>
+          <p><a href="/blog/{{$post->slug}}">{{$post->title}}</a></p></br>
 
           @endforeach
         </div>
@@ -84,7 +84,7 @@
           <hr>
           @foreach($projects as $project)
 
-          <p><a href="/projects/{{$project->id}}">{{$project->title}}</a></p></br>
+          <p><a href="/projects/{{$project->slug}}">{{$project->title}}</a></p></br>
 
           @endforeach
         </div>

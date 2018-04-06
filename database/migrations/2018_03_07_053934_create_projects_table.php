@@ -17,6 +17,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->longText('featureimage');
             $table->longText('title');
+            $table->text('slug');
             $table->longText('body');
             $table->timestamps();
         });

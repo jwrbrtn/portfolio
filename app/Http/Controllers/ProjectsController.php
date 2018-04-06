@@ -48,7 +48,8 @@ class ProjectsController extends Controller
     public function store(Request $request, Project $project)
     {
           $validator = Validator::make($request->all(), [
-             'title' => 'required|unique:posts|max:255',
+             'title' => 'required|unique:projects|max:255',
+             'slug' => 'required|unique:projects|max:255',
              'editordata' => 'required',
          ]);
 
@@ -61,6 +62,7 @@ class ProjectsController extends Controller
         $project->title = $request->title;
         $clean = Purifier::clean(Input::get('editordata'));
         $project->body = $clean;
+        $project->slug = $request->slug;
         $project->save();
         return redirect('home');
     }
@@ -71,9 +73,9 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $project = Project::find($id);
+        $project = Project::where('slug', $slug)->first();
         return view('projects.show', compact('project'));
     }
 
@@ -83,9 +85,9 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        $project = Project::find($id);
+        $project = Project::where('slug', $slug)->first();
         return view('projects.edit', compact('project'));
     }
 
@@ -96,13 +98,13 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        $project = Project::find($id);
+        $project = Project::where('slug', $slug)->first();
         $project->title = $request->title;
         $project->body = $request->body;
         $project->save();
-        return redirect('home');
+        return redirect('/');
     }
 
     /**
@@ -111,10 +113,10 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        $project = Project::find($id);
+        $project = Project::where('slug', $slug)->first();
         $project->delete();
-        return view('home');
+        return redirect('/');
     }
 }

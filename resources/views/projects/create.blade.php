@@ -23,7 +23,13 @@
     <input name="title" class="input" type="text" placeholder="Text input">
     {{csrf_field()}}
   </div>
+  <div class="control">
+      <label class="label">Slug</label>
+    <input name="slug" class="input" type="text" placeholder="Slug">
+  </div>
 </div>
+
+
 
 <label class="label">Set feature image</label>
 <div class="file">
