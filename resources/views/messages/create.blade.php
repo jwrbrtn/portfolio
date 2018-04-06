@@ -13,8 +13,7 @@
 <div class="container">
 
   @if (session('status'))
-<div class="notification is-success">
-  <button class="delete"></button>
+<div class="animated fadeInDown notification is-success message-created">
           {{ session('status') }}
 </div>
   @endif
@@ -31,7 +30,7 @@
   @endif
 <div class="columns contact">
 <div class="column is-one-half">
-  <h1 class="title">Contacting me</h1>
+  <h1 class="title">Let's get in touch!</h1>
   <p>{{$settings->contactText}}</p></br>
 
 </div>
@@ -62,7 +61,7 @@
 
 <div class="field is-grouped">
   <div class="control">
-    <button class="button is-link">Submit</button>
+    <button class="button is-primary">Submit</button>
   </div>
   <div class="control">
     <button class="button is-text">Cancel</button>

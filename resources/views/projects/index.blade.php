@@ -5,7 +5,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-Projects
+ Blog Posts
       </h1>
 
     </div>
@@ -19,17 +19,15 @@ Projects
 
 
   @foreach($projects as $project)
-
-  <h1 class="title">{{$project->title}}</h1>
-  <h1 class="subtitle">Published {{$project->created_at}}</h1>
-
-  <a class="button" href="projects/{{$project->slug}}">Read More</a></br></br>
+  <h1 class="subtitle date">{{ Carbon\Carbon::parse($project->created_at)->format('D d M Y') }}</h1>
+  <h1 class="title"><a href="blog/{{$project->slug}}">{{$project->title}}</a></h1>
+  <a class="readmore" href="blog/{{$project->slug}}">Read More</a></br></br>
   <hr>
   @endforeach
 
 </div>
 </div></br>
 
-{{ $projects->links('projects.pagination') }}
+{{ $projects->links('posts.pagination') }}
 </div>
 @endsection
