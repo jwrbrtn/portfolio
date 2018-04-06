@@ -1,0 +1,14 @@
+.hero.is-success {
+
+  background-image:url("../images/background.jpg");
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.card {
+  border-radius: 10px;
+  width: 25%;
+  margin: auto;
+}
