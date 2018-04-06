@@ -25,7 +25,7 @@
 <div class="field">
 <label class="label">Subtitle</label>
 <div class="control">
-  <input class="input" name="name" type="text" value="{{$settings->name}}" placeholder="Full Name">
+  <input class="input" name="subtitle" type="text" value="{{$settings->name}}" placeholder="Full Name">
 </div>
 </div>
 

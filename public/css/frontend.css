@@ -44,10 +44,12 @@ p {
 
 .title {
   font-size: 20px;
+  color: #616161;
 }
 
 .title a {
   font-size: 20px;
+    color: #616161;
 }
 
 .navbar-item {
@@ -58,8 +60,32 @@ p {
   font-size: 12px;
 }
 
-.blurb {
--webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,-10)));
-margin-bottom: -20px;
 
+.date {
+  font-size: 14px;
+  padding-bottom: 10px;
+  color: #BDBDBD;
+}
+
+.colored-link {
+  color: purple;
+}
+
+.colored-link:hover {
+  text-decoration: underline;
+  color: purple;
+}
+
+hr {
+  border-bottom: 1px solid #cecece;
+}
+.date-title {
+  font-size: 14px;
+  padding-bottom: 5px;
+  color: #BDBDBD;
+}
+
+
+.hero-title {
+  font-size: 28px;
 }

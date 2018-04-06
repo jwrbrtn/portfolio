@@ -23,7 +23,7 @@ Projects
   <h1 class="title">{{$project->title}}</h1>
   <h1 class="subtitle">Published {{$project->created_at}}</h1>
 
-  <a class="button" href="projects/{{$project->id}}">Read More</a></br></br>
+  <a class="button" href="projects/{{$project->slug}}">Read More</a></br></br>
   <hr>
   @endforeach
 

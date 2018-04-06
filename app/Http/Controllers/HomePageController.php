@@ -17,7 +17,7 @@ class HomePageController extends Controller
     public function index(Project $project, Post $post, Setting $setting)
     {
         $projects = $project::orderBy('created_at', 'desc')->take(5)->get();
-        $posts = $post::orderBy('created_at', 'desc')->take(5)->get();
+        $posts = $post::orderBy('created_at', 'desc')->take(4)->get();
         $settings = $setting->first();
         return view('welcome', compact('projects', 'posts'));
     }

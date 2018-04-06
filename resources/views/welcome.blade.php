@@ -48,16 +48,14 @@
     <section class="hero is-primary is-medium">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">
+          <h1 class="hero-title">
             {{$settings->name}}
           </h1>
-          <h2 class="subtitle">
-          {{$settings->subtitle}}</br>    <i class="icon is-medium fab fa-github"></i>
-               <i class="icon is-medium fab fa-twitter"></i>
+          <h2 class="">
+          {{$settings->subtitle}}</br></br>    <a href="{{$settings->github}}"><i class="icon is-small fab fa-github"></i></a>
+               <a href="{{$settings->twitter}}"><i class="icon is-small fab fa-twitter"></i></a>
           </h2>
-          <p>
-{{$settings->bio}}
-          </p>
+
         </div>
       </div>
     </section>
@@ -69,24 +67,17 @@
       <div class="columns">
         <div class="column">
           <h3 class="title">Recent Blog Posts</h3>
-          <a href="/blog">View All Blog Posts</a>
-          <hr>
           @foreach($posts as $post)
 
-          <p><a href="/blog/{{$post->slug}}">{{$post->title}}</a></p></br>
+          <h1 class="date-title">{{ Carbon\Carbon::parse($post->created_at)->format('D d M Y') }}</h1>
+          <h1 class="post-title-homepage"><a href="blog/{{$post->slug}}">{{$post->title}}</a></h1></br>
 
           @endforeach
+        <a href="/blog" class="colored-link">View All Blog Posts</a>
         </div>
         <div class="column">
-          <h3 class="title">Recent Projects
-          </h3>
-          <a href="/projects">View All Projects</a>
-          <hr>
-          @foreach($projects as $project)
-
-          <p><a href="/projects/{{$project->slug}}">{{$project->title}}</a></p></br>
-
-          @endforeach
+        <h3 class="title">About me</h3>
+        <p>{{$settings->bio}}</p>
         </div>
 
       </div>
