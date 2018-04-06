@@ -65,6 +65,7 @@ class SetupController extends Controller
       $settings->github = $request->github;
       $settings->twitter = $request->twitter;
       $settings->footer = $request->footer;
+      $settings->contactText = $request->contactText;
       $settings->save();
       return redirect('home')->with('status', 'Installation complete!');
 
@@ -109,6 +110,7 @@ class SetupController extends Controller
       $settings->github = $request->github;
       $settings->twitter = $request->twitter;
       $settings->footer = $request->footer;
+      $settings->contactText = $request->contactText;
       $settings->save();
       return redirect('home');
     }

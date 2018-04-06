@@ -37,6 +37,13 @@
 </div>
 
 <div class="field">
+  <label class="label">Contact me text</label>
+  <div class="control">
+    <textarea class="textarea" name="contactText" rows="10" placeholder="Write a short bio">{{$settings->contactText}}</textarea>
+  </div>
+</div>
+
+<div class="field">
   <label class="label">Footer Text</label>
   <div class="control">
     <textarea class="textarea" name="footer" rows="5" placeholder="Text to include in footer">{{$settings->footer}}</textarea>

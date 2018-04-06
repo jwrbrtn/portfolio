@@ -18,6 +18,7 @@ class CreateSettingsTable extends Migration
             $table->string('name');
             $table->string('subtitle');
             $table->longText('bio');
+            $table->longText('contactText');
             $table->longText('twitter');
             $table->longText('github');
             $table->longText('avatar');
