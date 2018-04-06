@@ -51,6 +51,7 @@
       <li><a href="/allposts"><i class="fas fa-th"></i>  View All Posts</a></li>
       <li><a href="/allprojects"><i class="far fa-list-alt"></i>  View All Projects</a></li>
       <li><a href="/messages"><i class="fas fa-envelope"></i>  View Messages</a></li>
+      <li><a href="/logout"><i class="fas fa-user"></i>  Logout</a></li>
     </ul>
 
     <p class="menu-label">
