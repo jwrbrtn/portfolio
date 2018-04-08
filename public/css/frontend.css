@@ -63,6 +63,9 @@ p {
 .navbar-item {
   font-size: 10px;
 }
+.navbar-item:hover {
+  color: #3c91e6;
+}
 
 .label {
   font-size: 12px;
