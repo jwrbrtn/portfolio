@@ -50,7 +50,7 @@ class ProjectsController extends Controller
           $validator = Validator::make($request->all(), [
              'title' => 'required|unique:projects|max:255',
              'slug' => 'required|unique:projects|max:255',
-             'editordata' => 'required',
+             'body' => 'required',
          ]);
 
          if ($validator->fails()) {
@@ -58,10 +58,8 @@ class ProjectsController extends Controller
                          ->withErrors($validator)
                          ->withInput();
          }
-        $number = rand(1, 10000);
         $project->title = $request->title;
-        $clean = Purifier::clean(Input::get('editordata'));
-        $project->body = $clean;
+        $project->body = $request->body;
         $project->slug = $request->slug;
         $project->save();
         return redirect('home');

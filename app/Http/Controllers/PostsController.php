@@ -45,7 +45,7 @@ class PostsController extends Controller
       $validator = Validator::make($request->all(), [
          'title' => 'required|unique:posts|max:255',
          'slug' => 'required|unique:posts|max:255',
-         'editordata' => 'required',
+         'body' => 'required',
      ]);
 
      if ($validator->fails()) {
@@ -55,10 +55,9 @@ class PostsController extends Controller
      }
       // If everything validates then do this
       $post->title = $request->title;
-      $clean = Purifier::clean(Input::get('editordata'));
-      $post->body = $clean;
+      $post->body = $request->body;
 
-      $stripped = strip_tags($clean);
+      $stripped = strip_tags($post->body);
       $post->excerpt = substr($stripped,0,350) . "...";
       //$post->featureimage = $path;
       $post->slug = $request->slug;

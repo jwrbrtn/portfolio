@@ -90,6 +90,13 @@ hr {
   font-size: 28px;
 }
 
+.hero {
+  background-image: url("../images/evershy-224068-unsplash.jpg");
+  background-position: right ;
+  background-repeat: no-repeat;
+  background-size:  cover;
+}
+
 .message-created {
   margin-top:25px;
 }

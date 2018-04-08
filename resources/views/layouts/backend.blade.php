@@ -11,6 +11,8 @@
    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/summernote-add-text-tags.css">
+    <script src="/js/summernote-add-text-tags.js"></script>
   </head>
   <body>
   <nav class="navbar dark" role="navigation" aria-label="main navigation">
@@ -85,9 +87,19 @@
   </footer>
   <script>
        $('#summernote').summernote({
-         placeholder: 'Hello stand alone ui',
+
+                   toolbar: [
+             // [groupName, [list of button]]
+             ['style', ['bold', 'italic', 'underline', 'add-text-tags','clear']],
+             ['font', ['strikethrough']],
+             ['fontsize', ['fontsize']],
+             ['color', ['color']],
+             ['para', ['ul', 'ol', 'paragraph']],
+           ],
+         placeholder: 'Enter Text Here',
          tabsize: 2,
-         height: 300
+         height: 300,
+
        });
      </script>
   </body>

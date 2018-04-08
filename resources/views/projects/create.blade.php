@@ -49,7 +49,7 @@
 <div class="field">
   <label class="label">Message</label>
   <div class="control">
-  <textarea id="summernote" name="editordata"></textarea>
+  <textarea id="summernote" name="body"></textarea>
   </div>
 </div>
 
