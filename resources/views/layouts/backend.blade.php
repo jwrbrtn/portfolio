@@ -12,23 +12,16 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="css/summernote-add-text-tags.css">
+
     <script src="/js/summernote-add-text-tags.js"></script>
+
   </head>
   <body>
   <nav class="navbar dark" role="navigation" aria-label="main navigation">
 
 
-<a class="navbar-item">
-  Home
-</a>
-<a class="navbar-item">
-  Blog
-</a>
-<a class="navbar-item">
-  Projects
-</a>
-<a class="navbar-item">
-  Contact
+<a href="/" class="navbar-item">
+  View Site
 </a>
   </nav>
 
@@ -80,27 +73,12 @@
     <div class="container">
       <div class="content has-text-centered">
         <p>
-                {{$settings->footer}}
+                {!! $settings->footer !!}
         </p>
       </div>
     </div>
   </footer>
-  <script>
-       $('#summernote').summernote({
+  <script src="/js/summernote.js"></script>
 
-                   toolbar: [
-             // [groupName, [list of button]]
-             ['style', ['bold', 'italic', 'underline', 'add-text-tags','clear']],
-             ['font', ['strikethrough']],
-             ['fontsize', ['fontsize']],
-             ['color', ['color']],
-             ['para', ['ul', 'ol', 'paragraph']],
-           ],
-         placeholder: 'Enter Text Here',
-         tabsize: 2,
-         height: 300,
-
-       });
-     </script>
   </body>
 </html>

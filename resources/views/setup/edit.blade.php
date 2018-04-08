@@ -25,28 +25,28 @@
 <div class="field">
 <label class="label">Subtitle</label>
 <div class="control">
-  <input class="input" name="subtitle" type="text" value="{{$settings->name}}" placeholder="Full Name">
+  <input class="input" name="subtitle" type="text" value="{{$settings->subtitle}}" placeholder="Full Name">
 </div>
 </div>
 
 <div class="field">
   <label class="label">About Me</label>
   <div class="control">
-    <textarea class="textarea" name="bio" rows="10" placeholder="Write a short bio">{{$settings->bio}}</textarea>
+    <textarea class="textarea" id="about" name="bio" rows="10" placeholder="Write a short bio">{{$settings->bio}}</textarea>
   </div>
 </div>
 
 <div class="field">
   <label class="label">Contact me text</label>
   <div class="control">
-    <textarea class="textarea" name="contactText" rows="10" placeholder="Write a short bio">{{$settings->contactText}}</textarea>
+    <textarea class="textarea" id="contact" name="contactText" rows="10" placeholder="Write a short bio">{{$settings->contactText}}</textarea>
   </div>
 </div>
 
 <div class="field">
   <label class="label">Footer Text</label>
   <div class="control">
-    <textarea class="textarea" name="footer" rows="5" placeholder="Text to include in footer">{{$settings->footer}}</textarea>
+    <textarea class="textarea" id="footer" name="footer" rows="5" placeholder="Text to include in footer">{{$settings->footer}}</textarea>
   </div>
 </div>
 
@@ -73,6 +73,6 @@
 
 </div>
 </form>
-</div>
+</div></br>
 
 @endsection

@@ -77,7 +77,7 @@
         </div>
         <div class="column">
         <h3 class="title">About me</h3>
-        <p>{{$settings->bio}}</p>
+        <p>{!! $settings->bio !!}</p>
         </div>
 
       </div>
@@ -92,8 +92,11 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
+        <a href="{{$settings->github}}"><i class="icon is-small fab fa-github"></i></a>
+        <a href="{{$settings->twitter}}"><i class="icon is-small fab fa-twitter"></i></a></br>
+        <hr class="footer-line">
         <p>
-          {{$settings->footer}}
+        {!! $settings->footer !!}
         </p>
       </div>
     </div>

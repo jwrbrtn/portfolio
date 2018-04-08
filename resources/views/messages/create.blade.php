@@ -31,7 +31,7 @@
 <div class="columns contact">
 <div class="column is-one-half">
   <h1 class="title">Let's get in touch!</h1>
-  <p>{{$settings->contactText}}</p></br>
+  <p>{!! $settings->contactText !!}</p></br>
 
 </div>
 <div class="column is-one-half">

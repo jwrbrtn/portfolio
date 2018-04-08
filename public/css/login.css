@@ -1,9 +1,6 @@
 .hero.is-success {
 
-  background-image:url("../images/background.jpg");
-  background-position: left;
-  background-size: cover;
-  background-repeat: no-repeat;
+ background: linear-gradient(to bottom right, #f1f2b5, #135058);
 }
 
 
@@ -11,4 +8,12 @@
   border-radius: 10px;
   width: 25%;
   margin: auto;
+}
+
+.button.is-primary {
+  background-color: #3c91e6;
+}
+
+.button.is-primary:hover {
+  background-color: #3c91e6;
 }

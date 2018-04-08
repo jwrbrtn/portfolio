@@ -116,3 +116,10 @@ background-color: #ff6b6b;
 .hero-button{
   margin-top: 15px;
 }
+
+.footer-line{
+  width: 13.5%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

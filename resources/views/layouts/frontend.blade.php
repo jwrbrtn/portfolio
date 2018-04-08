@@ -29,7 +29,7 @@
             Blog
           </a>
           <a class="navbar-item" href="/projects">
-            Portfolio
+            Projects
           </a>
           <a class="navbar-item" href="/contact">
             Contact
@@ -50,8 +50,11 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
+        <a href="{{$settings->github}}"><i class="icon is-small fab fa-github"></i></a>
+        <a href="{{$settings->twitter}}"><i class="icon is-small fab fa-twitter"></i></a></br>
+        <hr class="footer-line">
         <p>
-        {{$settings->footer}}
+        {!! $settings->footer !!}
         </p>
       </div>
     </div>

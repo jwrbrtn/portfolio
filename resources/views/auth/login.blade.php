@@ -44,7 +44,7 @@
 </div>
 <div class="field">
   <div class="control">
-    <input class="button" type="submit" value="Login" placeholder="Password">
+    <input class="button is-primary" type="submit" value="Login" placeholder="Password">
   </div>
 </div>
 </div>

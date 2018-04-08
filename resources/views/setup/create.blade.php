@@ -30,21 +30,21 @@
 <div class="field">
   <label class="label">About Me</label>
   <div class="control">
-    <textarea class="textarea" name="bio" placeholder="Write a short bio"></textarea>
+    <textarea class="textarea" id="about" name="bio" placeholder="Write a short bio"></textarea>
   </div>
 </div>
 
 <div class="field">
   <label class="label">Footer</label>
   <div class="control">
-    <textarea class="textarea" name="footer" placeholder="Text that will appear in your footer"></textarea>
+    <textarea class="textarea" id="footer" name="footer" placeholder="Text that will appear in your footer"></textarea>
   </div>
 </div>
 
 <div class="field">
   <label class="label">Contact Page Text</label>
   <div class="control">
-    <textarea class="textarea" name="contactText" placeholder="Text that will appear on contact page"></textarea>
+    <textarea class="textarea" id="contact" name="contactText" placeholder="Text that will appear on contact page"></textarea>
   </div>
 </div>
 
