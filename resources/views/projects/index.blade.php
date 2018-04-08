@@ -21,7 +21,7 @@
   @foreach($projects as $project)
   <h1 class="subtitle date">{{ Carbon\Carbon::parse($project->created_at)->format('D d M Y') }}</h1>
   <h1 class="title"><a href="blog/{{$project->slug}}">{{$project->title}}</a></h1>
-  <a class="readmore" href="blog/{{$project->slug}}">Read More</a></br></br>
+  <a class="readmore colored-link" href="projects/{{$project->slug}}">Read More</a></br>
   <hr>
   @endforeach
 

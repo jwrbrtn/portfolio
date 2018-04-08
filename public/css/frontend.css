@@ -15,8 +15,16 @@
 }
 
 .pagination-link.is-current {
-  background-color: #00d1b2;
-  border: 1px solid #00d1b2;
+  background-color: #3c91e6;
+  border: 1px solid #3c91e6;
+}
+
+.button.is-primary {
+  background-color: #3c91e6;
+}
+
+.button.is-primary:hover {
+  background-color: #3c91e6;
 }
 
 .excerpt {
@@ -68,12 +76,12 @@ p {
 }
 
 .colored-link {
-  color: purple;
+  color: #ff6b6b;
 }
 
 .colored-link:hover {
   text-decoration: underline;
-  color: purple;
+  color: #ff6b6b;
 }
 
 hr {
@@ -90,13 +98,18 @@ hr {
   font-size: 28px;
 }
 
-.hero {
-  background-image: url("../images/evershy-224068-unsplash.jpg");
-  background-position: right ;
-  background-repeat: no-repeat;
-  background-size:  cover;
+.hero.is-primary {
+background-color: #ff6b6b;
 }
 
 .message-created {
   margin-top:25px;
+}
+
+.footer {
+  background-color: #eff1f3;
+}
+
+.hero-button{
+  margin-top: 15px;
 }

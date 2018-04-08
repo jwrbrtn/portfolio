@@ -22,7 +22,7 @@
   <h1 class="subtitle date">{{ Carbon\Carbon::parse($post->created_at)->format('D d M Y') }}</h1>
   <h1 class="title"><a href="blog/{{$post->slug}}">{{$post->title}}</a></h1>
   <p class="excerpt">{{$post->excerpt}}</p></br>
-  <a class="readmore" href="blog/{{$post->slug}}">Read More</a></br></br>
+  <a class="readmore colored-link" href="blog/{{$post->slug}}">Read More</a></br>
   <hr>
   @endforeach
 

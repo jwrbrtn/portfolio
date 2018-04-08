@@ -51,11 +51,11 @@
           <h1 class="hero-title">
             {{$settings->name}}
           </h1>
-          <h2 class="">
-          {{$settings->subtitle}}</br></br>    <a href="{{$settings->github}}"><i class="icon is-small fab fa-github"></i></a>
-               <a href="{{$settings->twitter}}"><i class="icon is-small fab fa-twitter"></i></a>
-          </h2>
 
+          <h2 class="">
+          {{$settings->subtitle}}</h2></br>
+          <a href="{{$settings->github}}"><i class="icon is-medium fab fa-github"></i></a>
+          <a href="{{$settings->twitter}}"><i class="icon is-medium fab fa-twitter"></i></a></br>
         </div>
       </div>
     </section>
