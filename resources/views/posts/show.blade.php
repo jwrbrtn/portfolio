@@ -10,14 +10,19 @@
 
 
 <div class="container">
-<div class="content ">
-  <h1 class="title ">
-    {{$post->title}}
-  </h1>
-  <h3 class="is-size-6 byline">Published: {{ Carbon\Carbon::parse($post->created_at)->format('D d M Y') }} By Jessica Warburton </h3>
-
-<p class="">{!! $post->body !!}</p>
+</br>
+<div class="columns is-mobile">
+  <div class="column is-three-fifths is-offset-one-fifth">
+    <h1 class="subtitle date">{{ Carbon\Carbon::parse($post->created_at)->format('D d M Y') }}</h1>
+    <h1 class="title">
+      <a>{{$post->title}}</a>
+    </h1>
+  <div class="content">
+  <p class="">{!! $post->body !!}</p>
+  </div>
+  </div>
 </div>
+
 </div>
 
 @endsection
