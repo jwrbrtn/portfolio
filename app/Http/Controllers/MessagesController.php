@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Message;
 use Validator;
+use DB;
 
 class MessagesController extends Controller
 {
@@ -15,8 +16,8 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        $messages = Message::all();
-        return view('messages.index', compact('messages'));
+      $messages = DB::table('messages')->paginate(25);
+      return view('messages.index', compact('messages'));
     }
 
     /**

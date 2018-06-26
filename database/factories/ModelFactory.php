@@ -40,3 +40,14 @@ $factory->define(App\Project::class, function(Faker\Generator $faker){
       'body' => $faker->realText($maxNbChars = 1000),
     ];
 });
+
+
+
+
+$factory->define(App\Message::class, function(Faker\Generator $faker){
+    return [
+      'email' => $faker->email,
+      'name' => $faker->firstNameFemale,
+      'body' => $faker->realText($maxNbChars = 1000),
+    ];
+});
