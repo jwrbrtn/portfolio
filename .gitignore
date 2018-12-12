@@ -10,3 +10,4 @@ app.dockerfile
 docker-compose.yml
 Dockerfile
 .env
+laradock
