@@ -1,133 +1,113 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{$settings->sitetitle}}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <link rel="stylesheet" href="/css/frontend.css">
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/style.css">
+        <link href="/css/app.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+    </head>
+    <body>
+<div id=""> 
+<div class="columns is-gapless">
+  <div class="column is-one-quarter">
+  <section class="hero  is-fullheight">
+    <div class="hero-body primary-text">
+    <div class="banner">
+    </div>
+      <div class="container ">
+        <h1 class="title animated bounceInLeft">
+          Jessica Warburton
+        </h1>
+        <h2 class="subtitle animated bounceInRight">
+          Web developer
+        </h2>
+        <div class="animated fadeInUp">
+        <hr>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam cum asperiores, eum nesciunt nemo sequi in laborum veritatis eos aliquam suscipit, maxime illo expedita deleniti pariatur unde sit quo consectetur.</p>
+        </br><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam cum asperiores, eum nesciunt nemo sequi in laborum veritatis eos aliquam suscipit, maxime illo expedita deleniti pariatur unde sit quo consectetur.</p>
+        </br>
 
-    </script>
-  </head>
-  <body>
-
-    <nav class="navbar is-transparent">
-      <div class="navbar-brand">
-        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <div id="navbarExampleTransparentExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="/">
-            Home
-          </a>
-          <a class="navbar-item" href="/blog">
-            Blog
-          </a>
-          <a class="navbar-item" href="/projects">
-            Portfolio
-          </a>
-          <a class="navbar-item" href="/contact">
-            Contact
-          </a>
-        </div>
-
-
-    </nav>
-
-
-
-
-
-
-    <section class="hero is-primary is-medium">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="hero-title">
-            {{$settings->name}}
-          </h1>
-
-          <h2 class="">
-          {{$settings->subtitle}}</h2></br>
-          <a href="{{$settings->github}}"><i class="icon is-medium fab fa-github"></i></a>
-          <a href="{{$settings->twitter}}"><i class="icon is-medium fab fa-twitter"></i></a></br>
-        </div>
-      </div>
-    </section>
-
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-          <h3 class="title">Recent Blog Posts</h3>
-          @foreach($posts as $post)
-
-          <h1 class="date-title">{{ Carbon\Carbon::parse($post->created_at)->format('D d M Y') }}</h1>
-          <h1 class="post-title-homepage"><a href="blog/{{$post->slug}}">{{$post->title}}</a></h1></br>
-
-          @endforeach
-        <a href="/blog" class="colored-link">View All Blog Posts</a>
-        </div>
-        <div class="column">
-        <h3 class="title">About me</h3>
-        <p>{!! $settings->bio !!}</p>
-        </div>
-
+        <a href="">Shoot me an email!</a>
+        <hr>
+        
+          
+          <span class="icon has-text-info">
+          <i class="fab fa-github-alt"></i>
+          </span>
+          <span class="icon has-text-success">
+          <i class="fab fa-twitter"></i>
+          </span>
+          <span class="icon has-text-warning">
+          <i class="fab fa-spotify"></i>
+          </span>
+          <span class="icon has-text-danger">
+          <i class="fab fa-lastfm"></i>
+          </span>
+        <hr>
+</div>
       </div>
     </div>
-
   </section>
+  </div>
+  <div class="column is-fullheight primary-bg"> 
+  <div class="container box animated flipInX">
+  
+  <div id="root" class="container">
+  <tabs>
+    <tab name="Blog" :selected="true">
+      <h1>This part is about us
+      </h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis facere placeat animi amet magnam necessitatibus et fugiat enim impedit a maiores itaque, dignissimos pariatur obcaecati quasi sapiente unde aut?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis facere placeat animi amet magnam necessitatibus et fugiat enim impedit a maiores itaque, dignissimos pariatur obcaecati quasi sapiente unde aut?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis facere placeat animi amet magnam necessitatibus et fugiat enim impedit a maiores itaque, dignissimos pariatur obcaecati quasi sapiente unde aut?</p>
+
+    </tab>
+    <tab name="Projects">
+      <h1>This part is about our culture
+      </h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis facere placeat animi amet magnam necessitatibus et fugiat enim impedit a maiores itaque, dignissimos pariatur obcaecati quasi sapiente unde aut?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis facere placeat animi amet magnam necessitatibus et fugiat enim impedit a maiores itaque, dignissimos pariatur obcaecati quasi sapiente unde aut?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis facere placeat animi amet magnam necessitatibus et fugiat enim impedit a maiores itaque, dignissimos pariatur obcaecati quasi sapiente unde aut?</p>
+
+    </tab>
+    <tab name="About">
+      <h1>This part is about our vision
+      </h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis facere placeat animi amet magnam necessitatibus et fugiat enim impedit a maiores itaque, dignissimos pariatur obcaecati quasi sapiente unde aut?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis facere placeat animi amet magnam necessitatibus et fugiat enim impedit a maiores itaque, dignissimos pariatur obcaecati quasi sapiente unde aut?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis facere placeat animi amet magnam necessitatibus et fugiat enim impedit a maiores itaque, dignissimos pariatur obcaecati quasi sapiente unde aut?</p>
+
+    </tab>
+    <tab name="Contact">
+      <h1>This part is about our vision
+      </h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis facere placeat animi amet magnam necessitatibus et fugiat enim impedit a maiores itaque, dignissimos pariatur obcaecati quasi sapiente unde aut?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis facere placeat animi amet magnam necessitatibus et fugiat enim impedit a maiores itaque, dignissimos pariatur obcaecati quasi sapiente unde aut?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis facere placeat animi amet magnam necessitatibus et fugiat enim impedit a maiores itaque, dignissimos pariatur obcaecati quasi sapiente unde aut?</p>
+
+    </tab>
+  </tabs>
+</div>
 
 
 
 
 
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a href="{{$settings->github}}"><i class="icon is-small fab fa-github"></i></a>
-        <a href="{{$settings->twitter}}"><i class="icon is-small fab fa-twitter"></i></a></br>
-        <hr class="footer-line">
-        <p>
-        {!! $settings->footer !!}
-        </p>
-      </div>
-    </div>
-  </footer>
+  </div>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
+</div>
+</div>
+</div>
 
-    // Get all "navbar-burger" elements
-    var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-    // Check if there are any navbar burgers
-    if ($navbarBurgers.length > 0) {
+        <script src="/js/app.js"></script>
 
-      // Add a click event on each of them
-      $navbarBurgers.forEach(function ($el) {
-        $el.addEventListener('click', function () {
 
-          // Get the target from the "data-target" attribute
-          var target = $el.dataset.target;
-          var $target = document.getElementById(target);
 
-          // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-          $el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
-
-        });
-      });
-    }
-
-  });
-  </script>
-  </body>
+    </body>
 </html>
