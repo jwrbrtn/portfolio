@@ -1,27 +1,24 @@
+.is-light {
+    background-image: url('/4.jpg');
 
-
-.primary-bg {
-    background-image: url('/bg3.jpg');
     background-size: cover;
 }
 
-.primary-text {
-    padding-left: 25px;
-    padding-right: 25px;
+
+p {
+    width:50%;
+    margin:auto;
 }
 
 
-.card {
-    margin:25px;
+
+
+.special {
+    font-family: 'Satisfy', cursive;
 }
 
-.display {
-    margin-top: 150px;
+.hero.is-light a.navbar-item:hover, .hero.is-light a.navbar-item.is-active, .hero.is-light .navbar-link:hover, .hero.is-light .navbar-link.is-active {
+    
+    border-bottom: 1px solid black;
+    background: none;
 }
-
-.box {
-    margin-top:150px;
-    border-radius: 0;
-
-}
-
